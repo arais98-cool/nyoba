@@ -4,18 +4,20 @@ window.addEventListener('load', () => {
     title: 'Do you love me?',
     // text: "You won't be able to revert this!",
     icon: 'warning',
-    showCancelButton: true,
+    showCancelButton: false,
+    showDenyButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Yes',
-    cancelButtonText: 'No',
+    denyButtonText: 'No',
   }).then((result) => {
     if (result.isConfirmed) {
       document.querySelector('.song').play();
       resolveFetch().then(animationTimeline());
-    } else {
-      resolveFetch().then(animationTimeline());
-    }
+    } else if (result.isDenied)
+    Swal.fire('Any foolcemuter')
+    .then((result) => {window.location.href = "https://arais98-cool.github.io/mumu/"});                         
+    
   });
 });
 
